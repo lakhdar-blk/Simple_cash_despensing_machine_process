@@ -10,11 +10,11 @@ def dispensing_machine(environment, users):
 
         users -= 1
         print('New user enter arrived at', environment.now)
-        taken_time = random.choice([10, 15, 20, 25, 30])  #you can specify here the estimated spent time by machine users
+        taken_time = random.choice([10, 15, 20, 25, 30])  #you can specify here the estimated spent time by machine users.
         yield environment.timeout(taken_time)
         print('User took his money at', environment.now)
-        leave_time = random.choice([2, 3, 4, 5])
-        yield environment.timeout(leave_time)
+        leave_time = random.choice([2, 3, 4, 5]) #you can sepcify here the estimated leave time. 
+        yield environment.timeout(leave_time) 
         print('User leave at', environment.now)
         print("User time:", taken_time+leave_time)
         print('--------------------------------------')
